@@ -22,15 +22,21 @@
       </button>
     </ion-col>
   </ion-row>
-  
-  <ion-list>
-    <ion-item>
-      <ion-label>Default </ion-label>
-      <ion-select multiple="false" cancelText="ยกเลิก" okText="เปลี่ยน">
-        <ion-option *ngFor="let m of Model.menues" value="{{m.id}}" selected="{{Model.defaultMenuId==m.id}}">{{m.name}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  <ion-row>
+      <ion-col col-9>
+          <ion-list>
+              <ion-item>
+                <ion-label>Default </ion-label>
+                <ion-select [(ngModel)]="defaultChoice" multiple="false" cancelText="ยกเลิก" okText="เปลี่ยน">
+                  <ion-option *ngFor="let m of Model.menues" value="{{m.id}}" selected="{{Model.defaultMenuId==m.id}}">{{m.name}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+      </ion-col>
+      <ion-col col-3>
+          <button ion-button color="secondary" (click)="SetDefault()">เปลี่ยน</button>
+      </ion-col>
+  </ion-row>
   <div text-right>
     <button ion-button color="secondary"  (click)="AddMenu()">เพิ่มเมนู</button>
   </div>

@@ -13,11 +13,17 @@ export class ShopDetailPage {
 
   Model: Shop;
   MenuModel: Menu;
+  defaultChoice: string;
 
   constructor(public navCtrl: NavController, private http: HttpClient, public navParams: NavParams, private camera: Camera, private alertCtrl: AlertController) {
     this.MenuModel = new Menu();
   }
-
+  SetDefault(){
+    this.http.post(GlobalVarible.host + "/api/Shop/SetDefaultMenu/"+this.Model.id+"/"+this.defaultChoice, GlobalVarible.httpOptions)
+    .subscribe(data => {
+    });
+    
+  }
   Camera() {
     const options: CameraOptions = {
       quality: 100,
