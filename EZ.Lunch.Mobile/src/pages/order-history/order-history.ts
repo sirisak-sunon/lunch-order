@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OrderCreatePage } from '../order-create/order-create';
 
 /**
  * Generated class for the OrderHistoryPage page.
@@ -20,6 +21,10 @@ export class OrderHistoryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderHistoryPage');
+  }
+  
+  goOderCreatePage(){
+    this.navCtrl.push(OrderCreatePage)
   }
 
 }

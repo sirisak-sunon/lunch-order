@@ -1,57 +1,47 @@
 <ion-header>
-    <ion-navbar>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title><h3 text-center>สั่งข้าววันที่ 02/09/61</h3></ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-    <div>
-      
-      <ion-row>
-        <ion-col col-9>
-          <h4>ร้านกระเพราแท้</h4>
-        </ion-col>
-        <ion-col col-3>
-          <h4>20/25</h4>
-        </ion-col>
-      </ion-row>
-    </div>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <h3 text-center>สั่งข้าววันที่ 02/09/61</h3>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+
     <ion-row>
       <ion-col col-9>
-        <h4>Filtter</h4>
+        <h4>ร้านกระเพราแท้</h4>
       </ion-col>
       <ion-col col-3>
-          <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+        <h4>20/25</h4>
       </ion-col>
     </ion-row>
+  </div>
+  <ion-row>
+    <ion-col col-9>
+      <h4>Filtter</h4>
+    </ion-col>
+    <ion-col col-3>
+      <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+    </ion-col>
+  </ion-row>
 
-    <ion-list>
-        <ion-item-sliding>
-          <ion-item>
-            <ion-avatar item-start>
-              <img src="img/slimer.png">
-            </ion-avatar>
-            <h2>Slimer</h2>
-          </ion-item>
-          <ion-item-options side="left">
-            <button ion-button color="primary">
-              <ion-icon name="text"></ion-icon>
-              Text
-            </button>
-            <button ion-button color="secondary">
-              <ion-icon name="call"></ion-icon>
-              Call
-            </button>
-          </ion-item-options>
-          <ion-item-options side="right">
-            <button ion-button color="primary">
-              <ion-icon name="mail"></ion-icon>
-              Email
-            </button>
-          </ion-item-options>
-        </ion-item-sliding>
-      </ion-list>
-  </ion-content>
+  <ion-item-group>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="mushrooms1"></ion-checkbox>
+      <ion-label>หมู เผ็ดสัส ข้น</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>
+      <ion-label>หมู ทำดา ฮอท ข้น</ion-label>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>
+<ion-footer>
+  <button ion-button block (click)="Returned()">สั่ง</button>
+</ion-footer>

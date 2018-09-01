@@ -4,7 +4,7 @@ webpackJsonp([3],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderCreatePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OderDetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -19,29 +19,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the OrderCreatePage page.
+ * Generated class for the OderDetailPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var OrderCreatePage = /** @class */ (function () {
-    function OrderCreatePage(navCtrl, navParams) {
+var OderDetailPage = /** @class */ (function () {
+    function OderDetailPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    OrderCreatePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad OrderCreatePage');
+    OderDetailPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad OderDetailPage');
     };
-    OrderCreatePage = __decorate([
+    OderDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-order-create',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-create\order-create.html"*/'<!--\n  Generated template for the OrderCreatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>OrderCreate</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-create\order-create.html"*/,
+            selector: 'page-oder-detail',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\oder-detail\oder-detail.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      <h3 text-center>สั่งข้าววันที่ 02/09/61</h3>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div>\n\n    <ion-row>\n      <ion-col col-9>\n        <h4>ร้านกระเพราแท้</h4>\n      </ion-col>\n      <ion-col col-3>\n        <h4>20/25</h4>\n      </ion-col>\n    </ion-row>\n  </div>\n  <ion-row>\n    <ion-col col-9>\n      <h4>Filtter</h4>\n    </ion-col>\n    <ion-col col-3>\n      <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>\n    </ion-col>\n  </ion-row>\n\n  <ion-item-group>\n    <ion-item>\n      <ion-checkbox [(ngModel)]="mushrooms1"></ion-checkbox>\n      <ion-label>หมู เผ็ดสัส ข้น</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>\n      <ion-label>หมู ทำดา ฮอท ข้น</ion-label>\n    </ion-item>\n  </ion-item-group>\n\n</ion-content>\n<ion-footer>\n  <button ion-button block (click)="Returned()">สั่ง</button>\n</ion-footer>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\oder-detail\oder-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], OrderCreatePage);
-    return OrderCreatePage;
+    ], OderDetailPage);
+    return OderDetailPage;
 }());
 
-//# sourceMappingURL=order-create.js.map
+//# sourceMappingURL=oder-detail.js.map
 
 /***/ }),
 
@@ -52,6 +52,7 @@ var OrderCreatePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderHistoryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__order_create_order_create__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,6 +62,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /**
@@ -77,9 +79,12 @@ var OrderHistoryPage = /** @class */ (function () {
     OrderHistoryPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad OrderHistoryPage');
     };
+    OrderHistoryPage.prototype.goOderCreatePage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__order_create_order_create__["a" /* OrderCreatePage */]);
+    };
     OrderHistoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-order-history',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-history\order-history.html"*/'<!--\n  Generated template for the OrderHistoryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>OrderHistory</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-history\order-history.html"*/,
+            selector: 'page-order-history',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-history\order-history.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>OrderHistory</ion-title>\n    <ion-buttons right>\n      <button ion-button right color="danger" (click)="goOderCreatePage()">+</button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item>\n      <h2>แล้วแต่ เพราแท้</h2>\n      <h3>01/09/61</h3>\n      <p>27/30</p>\n    </ion-item>\n    <ion-item>\n      <h2>เป๋าตุง</h2>\n      <h3>31/08/61</h3>\n      <p>28/30</p>\n    </ion-item>\n    <ion-item>\n      <h2>โอม หมูกรอบ</h2>\n      <h3>30/08/61</h3>\n      <p>26/30</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-history\order-history.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], OrderHistoryPage);
@@ -147,7 +152,7 @@ module.exports = webpackAsyncContext;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__oder_detail_oder_detail__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__oder_detail_oder_detail__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -264,8 +269,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_oder_detail_oder_detail__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_order_create_order_create__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_oder_detail_oder_detail__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_order_create_order_create__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_order_history_order_history__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -341,7 +346,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_order_create_order_create__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_order_create_order_create__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_history_order_history__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -407,11 +412,11 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 99:
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OderDetailPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderCreatePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -426,29 +431,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the OderDetailPage page.
+ * Generated class for the OrderCreatePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var OderDetailPage = /** @class */ (function () {
-    function OderDetailPage(navCtrl, navParams) {
+var OrderCreatePage = /** @class */ (function () {
+    function OrderCreatePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    OderDetailPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad OderDetailPage');
+    OrderCreatePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad OrderCreatePage');
     };
-    OderDetailPage = __decorate([
+    OrderCreatePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-oder-detail',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\oder-detail\oder-detail.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title><h3 text-center>สั่งข้าววันที่ 02/09/61</h3></ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n    <div>\n      \n      <ion-row>\n        <ion-col col-9>\n          <h4>ร้านกระเพราแท้</h4>\n        </ion-col>\n        <ion-col col-3>\n          <h4>20/25</h4>\n        </ion-col>\n      </ion-row>\n    </div>\n    <ion-row>\n      <ion-col col-9>\n        <h4>Filtter</h4>\n      </ion-col>\n      <ion-col col-3>\n          <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>\n      </ion-col>\n    </ion-row>\n\n    <ion-list>\n        <ion-item-sliding>\n          <ion-item>\n            <ion-avatar item-start>\n              <img src="img/slimer.png">\n            </ion-avatar>\n            <h2>Slimer</h2>\n          </ion-item>\n          <ion-item-options side="left">\n            <button ion-button color="primary">\n              <ion-icon name="text"></ion-icon>\n              Text\n            </button>\n            <button ion-button color="secondary">\n              <ion-icon name="call"></ion-icon>\n              Call\n            </button>\n          </ion-item-options>\n          <ion-item-options side="right">\n            <button ion-button color="primary">\n              <ion-icon name="mail"></ion-icon>\n              Email\n            </button>\n          </ion-item-options>\n        </ion-item-sliding>\n      </ion-list>\n  </ion-content>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\oder-detail\oder-detail.html"*/,
+            selector: 'page-order-create',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-create\order-create.html"*/'<!--\n  Generated template for the OrderCreatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>OrderCreate</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-create\order-create.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], OderDetailPage);
-    return OderDetailPage;
+    ], OrderCreatePage);
+    return OrderCreatePage;
 }());
 
-//# sourceMappingURL=oder-detail.js.map
+//# sourceMappingURL=order-create.js.map
 
 /***/ })
 
