@@ -22,7 +22,7 @@
       </button>
     </ion-col>
   </ion-row>
-
+  
   <ion-list>
     <ion-item>
       <ion-label>Default </ion-label>
@@ -31,13 +31,25 @@
       </ion-select>
     </ion-item>
   </ion-list>
-  <button ion-button (click)="AddMenu()">เพิ่มเมนู</button>
+  <div text-right>
+    <button ion-button (click)="AddMenu()">เพิ่มเมนู</button>
+  </div>
   <ion-item-group>
-    <ion-item *ngFor="let m of Model.menues">
-      {{m.name}}
-      <button danger ion-button (click)="EditMenu(m.id, m.name)">edit</button>
-      <button danger ion-button (click)="DeleteMenu(m.id)">del</button>
-    </ion-item>
+    <div>
+      <ion-row *ngFor="let m of Model.menues">
+        <ion-col col-10>
+          {{m.name}}
+        </ion-col>
+        <ion-col col-1>
+          <ion-icon ios="ios-create" md="ios-create-outline" (click)="EditMenu(m.id, m.name)"></ion-icon>
+        </ion-col>
+        <ion-col col-1>
+          <!-- <button (click)="EditMenu(m.id, m.name)">Edit</button> -->
+          <ion-icon ios="ios-trash" md="ios-trash-outline" (click)="DeleteMenu(m.id)"></ion-icon>
+          <!-- <button (click)="DeleteMenu(m.id)">Del</button> -->
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-item-group>
 
 </ion-content>
