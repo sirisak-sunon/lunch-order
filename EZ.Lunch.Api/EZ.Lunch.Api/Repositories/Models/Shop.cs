@@ -22,5 +22,6 @@ namespace EZ.Lunch.Api.Repositories.Models
         public string Name { get; set; }
         public DateTime CreateDate { get; set; }
         public string CreateBy { get; set; }
+        public int VoterCount { get; set; }
     }
 }

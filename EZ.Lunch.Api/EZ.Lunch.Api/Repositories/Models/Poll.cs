@@ -20,5 +20,6 @@ namespace EZ.Lunch.Api.Repositories.Models
         public string Id { get; set; }
         public string UserId { get; set; }
         public string MenuId { get; set; }
+        public string Count { get; set; }
     }
 }
