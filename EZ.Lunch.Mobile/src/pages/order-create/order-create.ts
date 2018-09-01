@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OderDetailPage } from '../oder-detail/oder-detail';
 
 /**
  * Generated class for the OrderCreatePage page.
@@ -20,6 +21,9 @@ export class OrderCreatePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderCreatePage');
+  }
+  goorderdetail(){
+    this.navCtrl.push(OderDetailPage);
   }
 
 }

@@ -21,5 +21,4 @@ export class OderDetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad OderDetailPage');
   }
-
 }

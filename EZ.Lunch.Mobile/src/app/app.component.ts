@@ -14,7 +14,7 @@ import { OrderHistoryPage } from '../pages/order-history/order-history';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = OrderCreatePage;
 
   pages: Array<{ title: string, component: any }>;
 

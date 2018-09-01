@@ -7,7 +7,8 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>OrderCreate</ion-title>
+    <br>
+    <ion-title text-center>สร้างรายการ</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +16,51 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Title</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/shop.png">
+      </ion-avatar>
+      <h2>ร้านกะเพราแท้</h2>
+      <p>8 รายการ</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/shop.png">
+        </ion-avatar>
+        <h2>ร้านหม้อดิน</h2>
+        <p>15 รายการ</p>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/shop.png">
+          </ion-avatar>
+          <h2>ร้านเป๋าตุง</h2>
+          <p>9 รายการ</p>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="../../assets/imgs/shop.png">
+            </ion-avatar>
+            <h2>ร้านออออ</h2>
+            <p>7 รายการ</p>
+          </ion-item>
+        </ion-list>
+
 </ion-content>
+<ion-footer>
+  <button block color="secondary" ion-button block (click)="goorderdetail()">สร้างรายการ</button>
+</ion-footer>
