@@ -8,13 +8,18 @@
 
 
 <ion-content padding *ngIf="Model">
-  <img src="{{Model.imageUrl}}" alt="text-center" width="150" (click)=" Camera()>
+  <br><br><br>
+  <ion-card-content text-center>
+    <img src="{{Model.imageUrl}}" alt="text-center" width="150" (click)=" Camera()">
+  </ion-card-content>
   <ion-row>
     <ion-col col-9>
       <h3>{{Model.name}}</h3>
     </ion-col>
     <ion-col col-3>
-      <button ion-button>Edit</button>
+      <button ion-button>
+        Edit
+      </button>
     </ion-col>
   </ion-row>
 
@@ -22,7 +27,7 @@
     <ion-item>
       <ion-label>Defalt</ion-label>
       <ion-select [(ngModel)]="toppings" multiple="false" cancelText="ยกเลิก" okText="Okay!">
-        <ion-option *ngFor="let m of Model.menues" value="{{m.id}}" selected="true">{{m.name}}</ion-option>
+        <ion-option *ngFor="let m of Model.menues" value="{{m.id}}" selected="false">{{m.name}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
