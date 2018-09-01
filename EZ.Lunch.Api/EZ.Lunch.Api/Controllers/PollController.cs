@@ -7,8 +7,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EZ.Lunch.Api.Controllers
 {
-    [Route("api/Poll")]
+    [Route("api/[controller]/[action]")]
     public class PollController : Controller
     {
+        [HttpGet]
+        public void ShowPoll ()
+        {
+            throw new NotImplementedException();
+        }
+        [HttpPost]
+        public void CreatePoll()
+        {
+            throw new NotImplementedException();
+        }
+        [HttpGet]
+        public void ShowVoteDetail()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

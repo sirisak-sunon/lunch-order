@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EZ.Lunch.Api.Controllers
 {
-    [Route("api/User")]
+    [Route("api/[controller]/[action]")]
     public class UserController : Controller
     {
     }
