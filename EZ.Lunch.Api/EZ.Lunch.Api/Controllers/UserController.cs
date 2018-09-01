@@ -27,30 +27,30 @@ namespace EZ.Lunch.Api.Controllers
             this.UserDac = UserDac;
         }
 
-
-
         [HttpGet]
-        public void List()
+        public IEnumerable<User> List()
         {
-            throw new NotImplementedException();
+            return UserDac.List(u => true);
         }
 
         [HttpPost]
-        public void Add()
+        public void Create([FromBody]User request)
         {
-            throw new NotImplementedException();
+            UserDac.Create(request);
         }
 
         [HttpPost]
-        public void Edit()
+        public void Edit([FromBody]User request)
         {
-            throw new NotImplementedException();
+            var user = UserDac.Get(u => u.Id == request.Id);
+            user.DisplayName = request.DisplayName;
+            UserDac.UpdateOne(u => u.Id == request.Id, user);
         }
 
         [HttpPost]
-        public void Delete()
+        public void Delete(string id)
         {
-            throw new NotImplementedException();
+            UserDac.DeleteOne(u => u.Id == id);
         }
     }
 }

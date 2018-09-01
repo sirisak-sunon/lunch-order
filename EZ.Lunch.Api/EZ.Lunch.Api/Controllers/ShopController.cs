@@ -28,57 +28,70 @@ namespace EZ.Lunch.Api.Controllers
         }
 
         [HttpGet]
-        public void List()
+        public IEnumerable<Shop> List()
         {
-            throw new NotImplementedException();
+            return ShopDac.List(s => true);
         }
 
-        [HttpGet]
-        public void Get()
+        [HttpGet("{id}")]
+        public Shop Get(string id)
         {
-            throw new NotImplementedException();
-        }
-
-        [HttpPost]
-        public void Add()
-        {
-            throw new NotImplementedException();
+            return ShopDac.Get(s => s.Id == id);
         }
 
         [HttpPost]
-        public void Edit()
+        public void Create([FromBody]Shop request)
         {
-            throw new NotImplementedException();
+            ShopDac.Create(request);
         }
 
         [HttpPost]
-        public void Delete()
+        public void Edit([FromBody]Shop request)
         {
-            throw new NotImplementedException();
+            var shop = ShopDac.Get(s => s.Id == request.Id);
+            shop.Name = request.Name;
+            ShopDac.UpdateOne(s => s.Id == request.Id, shop);
         }
 
-        [HttpGet]
-        public void SetDefaultManu()
+        [HttpPost("{id}")]
+        public void Delete(string id)
         {
-            throw new NotImplementedException();
+            ShopDac.DeleteOne(s => s.Id == id);
         }
 
-        [HttpPost]
-        public void AddMenu()
+        [HttpPost("{id}")]
+        public void AddMenu([FromBody]Menu menu, string id)
         {
-            throw new NotImplementedException();
+            var shop = ShopDac.Get(s => s.Id == id);
+            var menues = shop.Menues.ToList();
+            menues.Add(menu);
+            shop.Menues = menues;
+            ShopDac.UpdateOne(s => s.Id == id, shop);
         }
 
-        [HttpPost]
-        public void EditMenu()
+        [HttpPost("{id}")]
+        public void EditMenu([FromBody]Menu menu, string id)
         {
-            throw new NotImplementedException();
+            var shop = ShopDac.Get(s => s.Id == id);
+            var newMenu = shop.Menues.FirstOrDefault(s => s.Id == menu.Id);
+            newMenu = menu;
+            ShopDac.UpdateOne(s => s.Id == id, shop);
         }
 
-        [HttpPost]
-        public void DeleteMenu()
+        [HttpPost("{id}")]
+        public void DeleteMenu(string menuid, string shopid)
         {
-            throw new NotImplementedException();
+            var shop = ShopDac.Get(s => s.Id == shopid);
+            shop.Menues = shop.Menues.Where(m => m.Id != menuid).ToList();
+            ShopDac.UpdateOne(s => s.Id == shopid, shop);
+        }
+
+        [HttpPost("{shopid}/{defaultmenuid}")]
+        public void SetDefaultMenu(string shopid, string defaultmenuid)
+        {
+            var shop = ShopDac.Get(s => s.Id == shopid);
+            shop.DefaultMenuId = defaultmenuid;
+            ShopDac.UpdateOne(s => s.Id == shopid, shop);
         }
     }
 }
