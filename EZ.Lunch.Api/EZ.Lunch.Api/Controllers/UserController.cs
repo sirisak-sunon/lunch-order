@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EZ.Lunch.Api.Models;
 using EZ.Lunch.Api.Repositories;
 using EZ.Lunch.Api.Repositories.Models;
 using Microsoft.AspNetCore.Http;
@@ -34,23 +35,63 @@ namespace EZ.Lunch.Api.Controllers
         }
 
         [HttpPost]
-        public void Create([FromBody]User request)
+        public RequestResponse Create([FromBody]User request)
         {
-            UserDac.Create(request);
+            var response = new RequestResponse();
+            try
+            {
+                request.Id = Guid.NewGuid().ToString();
+                UserDac.Create(request);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost]
-        public void Edit([FromBody]User request)
+        public RequestResponse Edit([FromBody]User request)
         {
-            var user = UserDac.Get(u => u.Id == request.Id);
-            user.DisplayName = request.DisplayName;
-            UserDac.UpdateOne(u => u.Id == request.Id, user);
+            var response = new RequestResponse();
+            try
+            {
+                var user = UserDac.Get(u => u.Id == request.Id);
+                user.DisplayName = request.DisplayName;
+                UserDac.UpdateOne(u => u.Id == request.Id, user);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost]
-        public void Delete(string id)
+        public RequestResponse Delete(string id)
         {
-            UserDac.DeleteOne(u => u.Id == id);
+            var response = new RequestResponse();
+            try
+            {
+                UserDac.DeleteOne(u => u.Id == id);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
     }
 }

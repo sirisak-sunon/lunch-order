@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EZ.Lunch.Api.Models;
 using EZ.Lunch.Api.Repositories;
 using EZ.Lunch.Api.Repositories.Models;
 using Microsoft.AspNetCore.Http;
@@ -40,58 +41,151 @@ namespace EZ.Lunch.Api.Controllers
         }
 
         [HttpPost]
-        public void Create([FromBody]Shop request)
+        public RequestResponse Create([FromBody]Shop request)
         {
-            ShopDac.Create(request);
+            var response = new RequestResponse();
+            try
+            {
+                request.Id = Guid.NewGuid().ToString();
+                ShopDac.Create(request);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost]
-        public void Edit([FromBody]Shop request)
+        public RequestResponse Edit([FromBody]Shop request)
         {
-            var shop = ShopDac.Get(s => s.Id == request.Id);
-            shop.Name = request.Name;
-            ShopDac.UpdateOne(s => s.Id == request.Id, shop);
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == request.Id);
+                shop.Name = request.Name;
+                ShopDac.UpdateOne(s => s.Id == request.Id, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost("{id}")]
-        public void Delete(string id)
+        public RequestResponse Delete(string id)
         {
-            ShopDac.DeleteOne(s => s.Id == id);
+            var response = new RequestResponse();
+            try
+            {
+                ShopDac.DeleteOne(s => s.Id == id);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost("{id}")]
-        public void AddMenu([FromBody]Menu menu, string id)
+        public RequestResponse AddMenu([FromBody]Menu request, string id)
         {
-            var shop = ShopDac.Get(s => s.Id == id);
-            var menues = shop.Menues.ToList();
-            menues.Add(menu);
-            shop.Menues = menues;
-            ShopDac.UpdateOne(s => s.Id == id, shop);
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == id);
+                var menues = shop.Menues.ToList();
+                request.Id = Guid.NewGuid().ToString();
+                menues.Add(request);
+                shop.Menues = menues;
+                ShopDac.UpdateOne(s => s.Id == id, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost("{id}")]
-        public void EditMenu([FromBody]Menu menu, string id)
+        public RequestResponse EditMenu([FromBody]Menu request, string id)
         {
-            var shop = ShopDac.Get(s => s.Id == id);
-            var newMenu = shop.Menues.FirstOrDefault(s => s.Id == menu.Id);
-            newMenu = menu;
-            ShopDac.UpdateOne(s => s.Id == id, shop);
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == id);
+                var menu = shop.Menues.FirstOrDefault(s => s.Id == request.Id);
+                menu.Name = request.Name;
+                ShopDac.UpdateOne(s => s.Id == id, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
-        [HttpPost("{id}")]
-        public void DeleteMenu(string menuid, string shopid)
+        [HttpPost("{menuid}/{shopid}")]
+        public RequestResponse DeleteMenu(string menuid, string shopid)
         {
-            var shop = ShopDac.Get(s => s.Id == shopid);
-            shop.Menues = shop.Menues.Where(m => m.Id != menuid).ToList();
-            ShopDac.UpdateOne(s => s.Id == shopid, shop);
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == shopid);
+                shop.Menues = shop.Menues.Where(m => m.Id != menuid).ToList();
+                ShopDac.UpdateOne(s => s.Id == shopid, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost("{shopid}/{defaultmenuid}")]
-        public void SetDefaultMenu(string shopid, string defaultmenuid)
+        public RequestResponse SetDefaultMenu(string shopid, string defaultmenuid)
         {
-            var shop = ShopDac.Get(s => s.Id == shopid);
-            shop.DefaultMenuId = defaultmenuid;
-            ShopDac.UpdateOne(s => s.Id == shopid, shop);
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == shopid);
+                shop.DefaultMenuId = defaultmenuid;
+                ShopDac.UpdateOne(s => s.Id == shopid, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
     }
 }
