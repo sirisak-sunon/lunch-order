@@ -1,0 +1,7 @@
+{
+  "name": "EZ.Lunch.Mobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
