@@ -107,7 +107,7 @@ namespace EZ.Lunch.Api.Controllers
             try
             {
                 var shop = ShopDac.Get(s => s.Id == id);
-                var menues = shop.Menues.ToList();
+                var menues = shop.Menues?.ToList() ?? new List<Menu>();
                 request.Id = Guid.NewGuid().ToString();
                 menues.Add(request);
                 shop.Menues = menues;
@@ -119,7 +119,7 @@ namespace EZ.Lunch.Api.Controllers
             catch (Exception ex)
             {
                 response.Code = 500;
-                response.Message = "error: " + ex.Message;
+                response.Message = "error: " + ex.ToString();
             }
             return response;
         }

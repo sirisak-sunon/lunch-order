@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-
+import { User, GlobalVarible } from '../../app/models';
+import { List } from 'ionic-angular/umd';
+import { HttpClient } from '@angular/common/http';
 /**
  * Generated class for the UsermanagePage page.
  *
@@ -16,47 +18,61 @@ import { AlertController } from 'ionic-angular';
 })
 export class UsermanagePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController) {
+  Users:User[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController, private http: HttpClient) {
+    
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UsermanagePage');
+  ionViewDidEnter() {
+    this.GetUser();
   }
-Usermanage()
-{
 
-}
-DeleteUsermanage(){
-  alert("ยืนยัน");
-}
-AddUsermanage(){
-  alert("เพิ่ม")
- }
- presentPrompt() {
-  let alert = this.alertCtrl.create({
-    title: 'เพิ่มสมาชิก',
-    inputs: [
-      {
-        name: 'name',
-        placeholder: 'Username'
-      }
-    ],
-    buttons: [
-      {
-        text: 'เพิ่ม',
-        handler: data => {
-          console.log(data.name);
+  GetUser()
+  {
+    this.http.get<User[]>(GlobalVarible.host + "/api/User/List")
+      .subscribe(data => {
+        this.Users = data;
+      });
+  }
+
+  DeleteUsermanage(id:string){
+    this.http.post(GlobalVarible.host + "/api/User/Delete/"+id, GlobalVarible.httpOptions)
+    .subscribe(data => {
+      this.GetUser();
+    });
+  }
+  AddUsermanage(){
+    alert("เพิ่ม")
+  }
+  presentPrompt() {
+    let alert = this.alertCtrl.create({
+      title: 'เพิ่มสมาชิก',
+      inputs: [
+        {
+          name: 'name',
+          placeholder: 'Username'
         }
-      },
-      {
-        text: 'ยกเลิก',
-        role: 'cancel',
-      },
-      
-    ]
-  });
-  alert.present();
-}
+      ],
+      buttons: [
+        {
+          text: 'เพิ่ม',
+          handler: data => {
+            let model =  { Displayname: data.name, Username : data.name} ;
+            this.http.post(GlobalVarible.host + "/api/User/Create", JSON.stringify(model), GlobalVarible.httpOptions)
+            .subscribe(data => {
+              this.GetUser();
+            });
+          }
+        },
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+        },
+      ]
+    });
+    alert.present();
+  }
 }
 
 

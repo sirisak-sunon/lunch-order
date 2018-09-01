@@ -17,7 +17,7 @@
       <h3>{{Model.name}}</h3>
     </ion-col>
     <ion-col col-3>
-      <button ion-button>
+      <button ion-button (click)="Edit()">
         Edit
       </button>
     </ion-col>
@@ -25,14 +25,19 @@
 
   <ion-list>
     <ion-item>
-      <ion-label>Defalt</ion-label>
-      <ion-select [(ngModel)]="toppings" multiple="false" cancelText="ยกเลิก" okText="Okay!">
-        <ion-option *ngFor="let m of Model.menues" value="{{m.id}}" selected="false">{{m.name}}</ion-option>
+      <ion-label>Default </ion-label>
+      <ion-select multiple="false" cancelText="ยกเลิก" okText="เปลี่ยน">
+        <ion-option *ngFor="let m of Model.menues" value="{{m.id}}" selected="{{Model.defaultMenuId==m.id}}">{{m.name}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
+  <button ion-button (click)="AddMenu()">เพิ่มเมนู</button>
   <ion-item-group>
-    <ion-item *ngFor="let m of Model.menues">{{m.name}}</ion-item>
+    <ion-item *ngFor="let m of Model.menues">
+      {{m.name}}
+      <button danger ion-button (click)="EditMenu(m.id, m.name)">edit</button>
+      <button danger ion-button (click)="DeleteMenu(m.id)">del</button>
+    </ion-item>
   </ion-item-group>
 
 </ion-content>

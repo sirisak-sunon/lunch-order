@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { GlobalVarible, Shop } from '../../app/models';
+import { GlobalVarible, Shop, RequestResponse, Menu } from '../../app/models';
 import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
@@ -12,8 +12,10 @@ import { HttpClient } from '@angular/common/http';
 export class ShopDetailPage {
 
   Model: Shop;
+  MenuModel: Menu;
 
-  constructor(public navCtrl: NavController, private http: HttpClient, public navParams: NavParams, private camera: Camera) {
+  constructor(public navCtrl: NavController, private http: HttpClient, public navParams: NavParams, private camera: Camera, private alertCtrl: AlertController) {
+    this.MenuModel = new Menu();
   }
 
   Camera() {
@@ -31,6 +33,130 @@ export class ShopDetailPage {
     }, (err) => {
       // Handle error
     });
+  }
+
+  Edit() {
+    let alert = this.alertCtrl.create({
+      title: 'แก้ไขชื่อร้าน',
+      inputs: [
+        {
+          name: 'shopname',
+          value: this.Model.name,
+          placeholder: 'ชื่อร้าน'
+        }
+      ],
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: data => {
+          }
+        },
+        {
+          text: 'แก้ไข',
+          handler: data => {
+            this.Model.name = data.shopname;
+            this.http.post<RequestResponse>(GlobalVarible.host + "/api/Shop/Edit", JSON.stringify(this.Model), GlobalVarible.httpOptions)
+              .subscribe(data => { });
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  AddMenu() {
+    let alert = this.alertCtrl.create({
+      title: 'เพิ่มเมนู',
+      inputs: [
+        {
+          name: 'name',
+          placeholder: 'ชื่อเมนู'
+        }
+      ],
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: data => {
+          }
+        },
+        {
+          text: 'เพิ่ม',
+          handler: data => {
+            this.MenuModel.name = data.name;
+            this.http.post<RequestResponse>(GlobalVarible.host + "/api/Shop/AddMenu/" + this.Model.id, JSON.stringify(this.MenuModel), GlobalVarible.httpOptions)
+              .subscribe(data => {
+                this.ionViewDidEnter();
+              });
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  EditMenu(id: string, name: string) {
+    let alert = this.alertCtrl.create({
+      title: 'แก้ไขเมนู',
+      inputs: [
+        {
+          name: 'name',
+          value: name,
+          placeholder: 'ชื่อเมนู'
+        }
+      ],
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: data => {
+          }
+        },
+        {
+          text: 'แก้ไข',
+          handler: data => {
+            this.MenuModel.id = id;
+            this.MenuModel.name = data.name;
+            this.http.post<RequestResponse>(GlobalVarible.host + "/api/Shop/EditMenu/" + this.Model.id, JSON.stringify(this.MenuModel), GlobalVarible.httpOptions)
+              .subscribe(data => {
+                this.ionViewDidEnter();
+              });
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  DeleteMenu(id: string) {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm ?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.http.post<RequestResponse>(GlobalVarible.host + "/api/Shop/DeleteMenu/" + id + "/" + this.Model.id, {}, GlobalVarible.httpOptions)
+              .subscribe(data => {
+                this.ionViewDidEnter();
+              });
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  SetDefaultMenu(id: string) {
+    this.http.post<RequestResponse>(GlobalVarible.host + "/api/Shop/SetDefaultMenu" + this.Model.id + "/" + id, {}, GlobalVarible.httpOptions)
+      .subscribe(data => { });
   }
 
   ionViewDidEnter() {
