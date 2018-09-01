@@ -19,37 +19,37 @@ import { GlobalVarible, Shop } from '../../app/models';
 })
 export class ShopCreatePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private camera: Camera, private http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private http: HttpClient) {
     this.Model = new Shop();
   }
   Model: Shop;
 
-  Camera(){
+  Camera() {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.FILE_URI,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
     }
-    
+
     this.camera.getPicture(options).then((imageData) => {
-     // imageData is either a base64 encoded string or a file URI
-     // If it's base64 (DATA_URL):
-     let base64Image = 'data:image/jpeg;base64,' + imageData;
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64 (DATA_URL):
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
-     // Handle error
+      // Handle error
     });
   }
 
-  goShopMangePage(){
+  goShopMangePage() {
     this.navCtrl.popTo(ShopManagePage)
   }
-  
+
   Create() {
     this.Model.imageUrl = "https://cdn-asset-mel-1.airsquare.com/www/library/image/blog/shop.png?201609230250";
     this.http.post(GlobalVarible.host + "/api/Shop/Create", JSON.stringify(this.Model), GlobalVarible.httpOptions)
       .subscribe(data => {
-        this.navCtrl.popToRoot();
+        this.navCtrl.pop();
       });
   }
 }
