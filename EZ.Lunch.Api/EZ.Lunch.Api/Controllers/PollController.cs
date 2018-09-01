@@ -100,15 +100,15 @@ namespace EZ.Lunch.Api.Controllers
             var shop = ShopDac.Get(x => x.Id == poll.SelectedShopId);
             var user = UserDac.Get(x => x.Username == username);
 
-            poll.Orders = poll.Orders.Concat(new List<Order>
+            var orders = poll.Orders.ToList();
+            orders.Add(new Order
             {
-                new Order
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    MenuId = menuid,
-                    UserId = user.Id,
-                }
+                Id = Guid.NewGuid().ToString(),
+                MenuId = menuid,
+                UserId = user.Id,
             });
+            poll.Orders = orders;
+
             PollDac.UpdateOne(x => x.Id == pollid, poll);
         }
     }
