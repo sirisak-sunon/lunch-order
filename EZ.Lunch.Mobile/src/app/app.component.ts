@@ -15,7 +15,7 @@ import { ShopManagePage } from '../pages/shop-manage/shop-manage';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = OrderCreatePage;
+  rootPage: any = HomePage;
 
   pages: Array<{ title: string, component: any }>;
 
