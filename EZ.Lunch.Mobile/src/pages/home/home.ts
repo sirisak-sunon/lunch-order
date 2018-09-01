@@ -31,7 +31,7 @@ export class HomePage {
 
   goOrderDetailPage(){
     GlobalVarible.username = this.selectedUser.username;
-    console.log(GlobalVarible.username);
+    this.selectedUser = null;
     this.navCtrl.push(OderDetailPage)
   }
 }
