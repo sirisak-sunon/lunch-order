@@ -5,9 +5,18 @@
 </ion-header>
 
 <ion-content padding>
-  <div text-center>
-    <ion-input placeholder="User Name"></ion-input>
-    <br><br>
-    <button ion-button round color="secondary" (click)="goOrderDetailPage()">Login</button>
-</div>
+  <div>
+      <div text-center>
+          <ion-item>
+              <ion-label>Username</ion-label>
+              <ion-select [(ngModel)]="selectedUser">
+
+                <ion-option *ngFor="let user of Users" [value]="user">{{user.displayName}}</ion-option>
+              </ion-select>
+            </ion-item>
+          <br><br>
+          <button block ion-button round color="secondary" (click)="goOrderDetailPage()">Login</button>
+        </div>
+  </div>
+
 </ion-content>
