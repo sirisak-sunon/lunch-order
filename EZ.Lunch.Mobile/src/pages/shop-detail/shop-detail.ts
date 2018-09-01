@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ShopDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { GlobalVarible, Shop } from '../../app/models';
+import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ShopDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Model: Shop;
+
+  constructor(public navCtrl: NavController, private http: HttpClient, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ShopDetailPage');
+  ionViewDidEnter() {
+    this.http.get<Shop>(GlobalVarible.host + "/api/Shop/Get/" + this.navParams.data.id)
+      .subscribe(data => {
+        this.Model = data;
+      });
   }
-
 }

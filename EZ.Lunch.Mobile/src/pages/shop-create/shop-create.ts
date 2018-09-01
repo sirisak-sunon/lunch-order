@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
+import { GlobalVarible, Shop } from '../../app/models';
 
 /**
  * Generated class for the ShopCreatePage page.
@@ -15,11 +17,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ShopCreatePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Model: Shop;
+
+  constructor(public navCtrl: NavController, private http: HttpClient, public navParams: NavParams) {
+    this.Model = new Shop();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ShopCreatePage');
+  Create() {
+    this.Model.imageUrl = "https://cdn-asset-mel-1.airsquare.com/www/library/image/blog/shop.png?201609230250";
+    this.http.post(GlobalVarible.host + "/api/Shop/Create", JSON.stringify(this.Model), GlobalVarible.httpOptions)
+      .subscribe(data => {
+        this.navCtrl.popToRoot();
+      });
   }
-
 }
