@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { OderDetailPage } from '../oder-detail/oder-detail';
 
 @Component({
   selector: 'page-home',
@@ -11,4 +12,7 @@ export class HomePage {
 
   }
 
+  goOrderDetailPage(){
+    this.navCtrl.push(OderDetailPage)
+  }
 }

@@ -8,12 +8,18 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { OderDetailPage } from '../pages/oder-detail/oder-detail';
+import { OrderCreatePage } from '../pages/order-create/order-create';
+import { OrderHistoryPage } from '../pages/order-history/order-history';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    OderDetailPage,
+    OrderCreatePage,
+    OrderHistoryPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +29,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    OderDetailPage,
+    OrderCreatePage,
+    OrderHistoryPage
   ],
   providers: [
     StatusBar,
