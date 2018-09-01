@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ShopDetailPage } from '../shop-detail/shop-detail';
+import { ShopCreatePage } from '../shop-create/shop-create';
 
 /**
  * Generated class for the ShopManagePage page.
@@ -22,4 +24,11 @@ export class ShopManagePage {
     console.log('ionViewDidLoad ShopManagePage');
   }
 
+  goShopDetailPage(){
+    this.navCtrl.push(ShopDetailPage)
+  }
+
+  goShopCreatePage(){
+    this.navCtrl.push(ShopCreatePage)
+  }
 }

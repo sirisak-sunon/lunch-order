@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 101:
+/***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34,7 +34,7 @@ var OderDetailPage = /** @class */ (function () {
     };
     OderDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-oder-detail',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\oder-detail\oder-detail.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      <h3 text-center>สั่งข้าววันที่ 02/09/61</h3>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div>\n\n    <ion-row>\n      <ion-col col-9>\n        <h4>ร้านกระเพราแท้</h4>\n      </ion-col>\n      <ion-col col-3>\n        <h4>20/25</h4>\n      </ion-col>\n    </ion-row>\n  </div>\n  <ion-row>\n    <ion-col col-9>\n      <h4>Filtter</h4>\n    </ion-col>\n    <ion-col col-3>\n      <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>\n    </ion-col>\n  </ion-row>\n\n  <ion-item-group>\n    <ion-item>\n      <ion-checkbox [(ngModel)]="mushrooms1"></ion-checkbox>\n      <ion-label>หมู เผ็ดสัส ข้น</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>\n      <ion-label>หมู ทำดา ฮอท ข้น</ion-label>\n    </ion-item>\n  </ion-item-group>\n\n</ion-content>\n<ion-footer>\n  <button ion-button block>สั่ง</button>\n</ion-footer>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\oder-detail\oder-detail.html"*/,
+            selector: 'page-oder-detail',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\oder-detail\oder-detail.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>\n\n      <h3 text-center>สั่งข้าววันที่ 02/09/61</h3>\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div>\n\n\n\n    <ion-row>\n\n      <ion-col col-9>\n\n        <h4>ร้านกระเพราแท้</h4>\n\n      </ion-col>\n\n      <ion-col col-3>\n\n        <h4>20/25</h4>\n\n      </ion-col>\n\n    </ion-row>\n\n  </div>\n\n  <ion-row>\n\n    <ion-col col-9>\n\n      <h4>Filtter</h4>\n\n    </ion-col>\n\n    <ion-col col-3>\n\n      <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n  <ion-item-group>\n\n    <ion-item>\n\n      <ion-checkbox [(ngModel)]="mushrooms1"></ion-checkbox>\n\n      <ion-label>หมู เผ็ดสัส ข้น</ion-label>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>\n\n      <ion-label>หมู ทำดา ฮอท ข้น</ion-label>\n\n    </ion-item>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n<ion-footer>\n\n  <button ion-button block (click)="Returned()">สั่ง</button>\n\n</ion-footer>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\oder-detail\oder-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], OderDetailPage);
@@ -45,7 +45,7 @@ var OderDetailPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 102:
+/***/ 101:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -95,59 +95,15 @@ var OrderHistoryPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 103:
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopDetailPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopManagePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the ShopDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ShopDetailPage = /** @class */ (function () {
-    function ShopDetailPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ShopDetailPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ShopDetailPage');
-    };
-    ShopDetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-shop-detail',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-detail\shop-detail.html"*/'<ion-header>\n    <ion-navbar>\n      <ion-title>Edit Item</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n    <div text-center>\n      <img src="../../assets/imgs/praotae.jpg" style="float:center" width="150">\n    </div>\n    <br>\n    <h3>แล้วแต่ เพราแท้</h3>\n    <br>\n    <ion-list>\n        <ion-item>\n          <ion-label>Toppings</ion-label>\n          <ion-select [(ngModel)]="Default" multiple="false" cancelText="ยกเลิก" okText="Okay!">\n            <ion-option value="หมู เผ็ด ฮอท ข้น" selected="true">หมู เผ็ด ฮอท ข้น</ion-option>\n            <ion-option value="หมู เผ็ดสัส ฮอท ข้น">หมู เผ็ดสัส ฮอท ข้น</ion-option>\n            <ion-option value="หมู เผ็ด ฮอท ดาว">หมู เผ็ด ฮอท ดาว</ion-option>\n            <ion-option value="ไก่ เผ็ด ฮอท ข้น">ไก่ เผ็ด ฮอท ข้น</ion-option>\n            <ion-option value="ไก่ เผ็ดสัส ฮอท ข้น">ไก่ เผ็ดสัส ฮอท ข้น</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n  </ion-content>\n  \n    <ion-footer>\n          <button ion-button block (click)="goShopManagePage()">สร้าง</button>\n    </ion-footer>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-detail\shop-detail.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], ShopDetailPage);
-    return ShopDetailPage;
-}());
-
-//# sourceMappingURL=shop-detail.js.map
-
-/***/ }),
-
-/***/ 104:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopCreatePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shop_manage_shop_manage__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shop_detail_shop_detail__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shop_create_shop_create__ = __webpack_require__(199);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -160,37 +116,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the ShopCreatePage page.
+ * Generated class for the ShopManagePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ShopCreatePage = /** @class */ (function () {
-    function ShopCreatePage(navCtrl, navParams) {
+var ShopManagePage = /** @class */ (function () {
+    function ShopManagePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    ShopCreatePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ShopCreatePage');
+    ShopManagePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ShopManagePage');
     };
-    ShopCreatePage.prototype.goShopManagePage = function () {
-        this.navCtrl.popTo(__WEBPACK_IMPORTED_MODULE_2__shop_manage_shop_manage__["a" /* ShopManagePage */]);
+    ShopManagePage.prototype.goShopDetailPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__shop_detail_shop_detail__["a" /* ShopDetailPage */]);
     };
-    ShopCreatePage = __decorate([
+    ShopManagePage.prototype.goShopCreatePage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__shop_create_shop_create__["a" /* ShopCreatePage */]);
+    };
+    ShopManagePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-shop-create',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-create\shop-create.html"*/'<ion-header>\n    <ion-navbar>\n      <ion-title>Edit Item</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n    <div text-center>\n      <img src="../../assets/imgs/add-image.png" style="float:center" width="150">\n    </div>\n    <br>\n    <ion-input type="text" placeholder="Shop Name"></ion-input>\n  </ion-content>\n  \n    <ion-footer>\n          <button ion-button block (click)="goShopManagePage()">สร้าง</button>\n    </ion-footer>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-create\shop-create.html"*/,
+            selector: 'page-shop-manage',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-manage\shop-manage.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ShopManage</ion-title>\n    <button ion-button (click)="goShopCreatePage()">+</button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item (click)="goShopDetailPage()">\n      <ion-avatar item-start>\n        <img src="../../assets/imgs/logo.png">\n      </ion-avatar>\n      <h2>Cher</h2>\n      <p>Ugh. As if.</p>\n    </ion-item>\n    <ion-item (click)="goShopDetailPage()">\n      <ion-avatar item-start>\n        <img src="../../assets/imgs/logo.png">\n      </ion-avatar>\n      <h2>Cher</h2>\n      <p>Ugh. As if.</p>\n    </ion-item>\n    <ion-item (click)="goShopDetailPage()">\n      <ion-avatar item-start>\n        <img src="../../assets/imgs/logo.png">\n      </ion-avatar>\n      <h2>Cher</h2>\n      <p>Ugh. As if.</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-manage\shop-manage.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], ShopCreatePage);
-    return ShopCreatePage;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object])
+    ], ShopManagePage);
+    return ShopManagePage;
+    var _a, _b;
 }());
 
-//# sourceMappingURL=shop-create.js.map
+//# sourceMappingURL=shop-manage.js.map
 
 /***/ }),
 
-/***/ 114:
+/***/ 112:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -203,20 +164,20 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 114;
+webpackEmptyAsyncContext.id = 112;
 
 /***/ }),
 
-/***/ 155:
+/***/ 153:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/oder-detail/oder-detail.module": [
-		275,
+		276,
 		5
 	],
 	"../pages/order-create/order-create.module": [
-		276,
+		275,
 		4
 	],
 	"../pages/order-history/order-history.module": [
@@ -224,15 +185,15 @@ var map = {
 		3
 	],
 	"../pages/shop-create/shop-create.module": [
-		280,
+		278,
 		2
 	],
 	"../pages/shop-detail/shop-detail.module": [
-		278,
+		279,
 		1
 	],
 	"../pages/shop-manage/shop-manage.module": [
-		279,
+		280,
 		0
 	]
 };
@@ -247,19 +208,19 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 155;
+webpackAsyncContext.id = 153;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 199:
+/***/ 197:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__oder_detail_oder_detail__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__oder_detail_oder_detail__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -281,7 +242,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>Login</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <ion-input placeholder="User Name"></ion-input>\n\n    <br><br>\n\n    <button ion-button round (click)="goOrderDetailPage()">Login</button>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>Login</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div text-center>\n\n    <ion-input placeholder="User Name"></ion-input>\n\n    <br><br>\n\n    <button ion-button round color="secondary" (click)="goOrderDetailPage()">Login</button>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
@@ -292,7 +253,7 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 200:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -349,6 +310,96 @@ var ListPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 199:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopCreatePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ShopCreatePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ShopCreatePage = /** @class */ (function () {
+    function ShopCreatePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ShopCreatePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ShopCreatePage');
+    };
+    ShopCreatePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-shop-create',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-create\shop-create.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>ShopCreate</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding text-center>\n<img src="../../assets/imgs/add-image.png" width="150">\n<ion-input placeholder="Shop Name"></ion-input>\n</ion-content>\n<ion-footer>\n  <button ion-button block>เพิ่ม</button>\n  \n</ion-footer>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-create\shop-create.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], ShopCreatePage);
+    return ShopCreatePage;
+}());
+
+//# sourceMappingURL=shop-create.js.map
+
+/***/ }),
+
+/***/ 200:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopDetailPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ShopDetailPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ShopDetailPage = /** @class */ (function () {
+    function ShopDetailPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ShopDetailPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ShopDetailPage');
+    };
+    ShopDetailPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-shop-detail',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-detail\shop-detail.html"*/'<ion-header>\n\n  <ion-navbar text-center>\n    <ion-title>แล้วแต่ เพราแท้</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <img src="../../assets/imgs/paotae.jpg" alt="text-center" width="150">\n  <ion-row>\n    <ion-col col-9>\n  <h3>แล้วแต่ เพราแท้</h3>\n</ion-col>\n<ion-col col-3>\n  <button ion-button>Edit</button>\n  </ion-col>\n</ion-row>\n\n<ion-list>\n    <ion-item>\n      <ion-label>Defalt</ion-label>\n      <ion-select [(ngModel)]="toppings" multiple="false" cancelText="ยกเลิก" okText="Okay!">\n        <ion-option value="1" selected="true">หมู เผ็ด ฮอท ข้น</ion-option>\n        <ion-option value="2">หมู เผ็ดสัส ฮอท ข้น</ion-option>\n        <ion-option value="3">หมู เผ็ดทำดา ฮอท ดาว</ion-option>\n        <ion-option value="4">ไก่ เผ็ด ฮอท ข้น</ion-option>\n        <ion-option value="5">ไก่ เผ็ดสัส ฮอท ข้น</ion-option>\n        <ion-option value="6">ไก่ เผ็ด ฮอท ดาว</ion-option>\n      </ion-select>\n    </ion-item>\n  </ion-list>\n  <ion-item-group>\n      <ion-item>หมู เผ็ด ฮอท ข้น</ion-item>\n      <ion-item>หมู เผ็ดสัส ฮอท ข้น</ion-item>\n      <ion-item>หมู เผ็ดทำดา ฮอท ดาว</ion-item>\n      <ion-item>ไก่ เผ็ด ฮอท ข้น</ion-item>\n      <ion-item>ไก่ เผ็ดสัส ฮอท ข้น</ion-item>\n      <ion-item>ไก่ เผ็ด ฮอท ดาว</ion-item>\n    </ion-item-group>\n\n</ion-content>\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-detail\shop-detail.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], ShopDetailPage);
+    return ShopDetailPage;
+}());
+
+//# sourceMappingURL=shop-detail.js.map
+
+/***/ }),
+
 /***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -372,16 +423,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_oder_detail_oder_detail__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_oder_detail_oder_detail__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_order_create_order_create__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_order_history_order_history__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_shop_create_shop_create__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_shop_detail_shop_detail__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_shop_manage_shop_manage__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_order_history_order_history__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_shop_create_shop_create__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_shop_detail_shop_detail__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_shop_manage_shop_manage__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -422,12 +473,12 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/oder-detail/oder-detail.module#OderDetailPageModule', name: 'OderDetailPage', segment: 'oder-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/order-create/order-create.module#OrderCreatePageModule', name: 'OrderCreatePage', segment: 'order-create', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/oder-detail/oder-detail.module#OderDetailPageModule', name: 'OderDetailPage', segment: 'oder-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/order-history/order-history.module#OrderHistoryPageModule', name: 'OrderHistoryPage', segment: 'order-history', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/shop-create/shop-create.module#ShopCreatePageModule', name: 'ShopCreatePage', segment: 'shop-create', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/shop-detail/shop-detail.module#ShopDetailPageModule', name: 'ShopDetailPage', segment: 'shop-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/shop-manage/shop-manage.module#ShopManagePageModule', name: 'ShopManagePage', segment: 'shop-manage', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/shop-create/shop-create.module#ShopCreatePageModule', name: 'ShopCreatePage', segment: 'shop-create', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/shop-manage/shop-manage.module#ShopManagePageModule', name: 'ShopManagePage', segment: 'shop-manage', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],
@@ -464,13 +515,13 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_order_create_order_create__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_history_order_history__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_shop_manage_shop_manage__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_history_order_history__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_shop_manage_shop_manage__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -570,7 +621,7 @@ var OrderCreatePage = /** @class */ (function () {
     };
     OrderCreatePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-order-create',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-create\order-create.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>สร้างรายการ</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-input placeholder="วันที่"></ion-input>\n</ion-content>\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-create\order-create.html"*/,
+            selector: 'page-order-create',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-create\order-create.html"*/'<!--\n\n  Generated template for the OrderCreatePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>OrderCreate</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\order-create\order-create.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], OrderCreatePage);
@@ -578,61 +629,6 @@ var OrderCreatePage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=order-create.js.map
-
-/***/ }),
-
-/***/ 51:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopManagePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shop_create_shop_create__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shop_detail_shop_detail__ = __webpack_require__(103);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the ShopManagePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ShopManagePage = /** @class */ (function () {
-    function ShopManagePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ShopManagePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ShopManagePage');
-    };
-    ShopManagePage.prototype.goShopCreate = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__shop_create_shop_create__["a" /* ShopCreatePage */]);
-    };
-    ShopManagePage.prototype.goShopDetailPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__shop_detail_shop_detail__["a" /* ShopDetailPage */]);
-    };
-    ShopManagePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-shop-manage',template:/*ion-inline-start:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-manage\shop-manage.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>จัดการร้าน</ion-title>\n    <ion-buttons right>\n      <button ion-button right color="danger" (click)="goShopCreate()">สร้าง</button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item (click)="goShopDetailPage()">\n      <ion-avatar item-start>\n        <img src="../../assets/imgs/logo.png">\n      </ion-avatar>\n      <h2>Finn</h2>\n      <h3>Don\'t Know What To Do!</h3>\n      <p>I\'ve had a pretty messed up day. If we just...</p>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-item (click)="goShopDetailPage()">\n      <ion-avatar item-start>\n          <img src="../../assets/imgs/logo.png">\n      </ion-avatar>\n      <h2>Finn</h2>\n      <h3>Don\'t Know What To Do!</h3>\n      <p>I\'ve had a pretty messed up day. If we just...</p>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-item (click)="goShopDetailPage()">\n      <ion-avatar item-start>\n          <img src="../../assets/imgs/logo.png">\n      </ion-avatar>\n      <h2>Finn</h2>\n      <h3>Don\'t Know What To Do!</h3>\n      <p>I\'ve had a pretty messed up day. If we just...</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"E:\lunch-order\EZ.Lunch.Mobile\src\pages\shop-manage\shop-manage.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], ShopManagePage);
-    return ShopManagePage;
-}());
-
-//# sourceMappingURL=shop-manage.js.map
 
 /***/ })
 
