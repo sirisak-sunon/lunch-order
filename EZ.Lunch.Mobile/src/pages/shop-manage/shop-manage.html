@@ -1,13 +1,13 @@
-
 <ion-header>
-
   <ion-navbar>
     <ion-title>ShopManage</ion-title>
-    <button ion-button right (click)="goShopCreatePage()">+</button>
+    <ion-buttons end>
+      <button ion-button color="secondary" icon-only (click)="goShopCreatePage()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <ion-list>

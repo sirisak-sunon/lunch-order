@@ -9,6 +9,7 @@ import { OrderCreatePage } from '../pages/order-create/order-create';
 import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { ShopManagePage } from '../pages/shop-manage/shop-manage';
 import { UsermanagePage } from '../pages/usermanage/usermanage'
+import { OderDetailPage } from '../pages/oder-detail/oder-detail';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,7 +28,7 @@ export class MyApp {
     this.pages = [
       { title: 'สร้างรายการ', component: OrderCreatePage },
       { title: 'ประวัติ', component: OrderHistoryPage },
-      { title: 'ปิดโพลปัจจุบัน', component: ListPage },
+      { title: 'ปิดโพลปัจจุบัน', component: OderDetailPage },
       { title: 'จัดการร้าน', component: ShopManagePage },
       { title: 'จัดการคน', component: UsermanagePage },
       { title: 'Logout', component: HomePage }
