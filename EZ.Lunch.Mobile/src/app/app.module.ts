@@ -11,6 +11,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { OderDetailPage } from '../pages/oder-detail/oder-detail';
 import { OrderCreatePage } from '../pages/order-create/order-create';
 import { OrderHistoryPage } from '../pages/order-history/order-history';
+import { ShopCreatePage } from '../pages/shop-create/shop-create';
+import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
+import { ShopManagePage } from '../pages/shop-manage/shop-manage';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { OrderHistoryPage } from '../pages/order-history/order-history';
     ListPage,
     OderDetailPage,
     OrderCreatePage,
-    OrderHistoryPage
+    OrderHistoryPage,
+    ShopCreatePage,
+    ShopDetailPage,
+    ShopManagePage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,10 @@ import { OrderHistoryPage } from '../pages/order-history/order-history';
     ListPage,
     OderDetailPage,
     OrderCreatePage,
-    OrderHistoryPage
+    OrderHistoryPage,
+    ShopCreatePage,
+    ShopDetailPage,
+    ShopManagePage
   ],
   providers: [
     StatusBar,

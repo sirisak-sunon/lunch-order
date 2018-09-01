@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EZ.Lunch.Api.Models;
 using EZ.Lunch.Api.Repositories;
 using EZ.Lunch.Api.Repositories.Models;
 using Microsoft.AspNetCore.Http;
@@ -28,57 +29,163 @@ namespace EZ.Lunch.Api.Controllers
         }
 
         [HttpGet]
-        public void List()
+        public IEnumerable<Shop> List()
         {
-            throw new NotImplementedException();
+            return ShopDac.List(s => true);
         }
 
-        [HttpGet]
-        public void Get()
+        [HttpGet("{id}")]
+        public Shop Get(string id)
         {
-            throw new NotImplementedException();
-        }
-
-        [HttpPost]
-        public void Add()
-        {
-            throw new NotImplementedException();
+            return ShopDac.Get(s => s.Id == id);
         }
 
         [HttpPost]
-        public void Edit()
+        public RequestResponse Create([FromBody]Shop request)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                request.Id = Guid.NewGuid().ToString();
+                ShopDac.Create(request);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost]
-        public void Delete()
+        public RequestResponse Edit([FromBody]Shop request)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == request.Id);
+                shop.Name = request.Name;
+                ShopDac.UpdateOne(s => s.Id == request.Id, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
-        [HttpGet]
-        public void SetDefaultManu()
+        [HttpPost("{id}")]
+        public RequestResponse Delete(string id)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                ShopDac.DeleteOne(s => s.Id == id);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
-        [HttpPost]
-        public void AddMenu()
+        [HttpPost("{id}")]
+        public RequestResponse AddMenu([FromBody]Menu request, string id)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == id);
+                var menues = shop.Menues.ToList();
+                request.Id = Guid.NewGuid().ToString();
+                menues.Add(request);
+                shop.Menues = menues;
+                ShopDac.UpdateOne(s => s.Id == id, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
-        [HttpPost]
-        public void EditMenu()
+        [HttpPost("{id}")]
+        public RequestResponse EditMenu([FromBody]Menu request, string id)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == id);
+                var menu = shop.Menues.FirstOrDefault(s => s.Id == request.Id);
+                menu.Name = request.Name;
+                ShopDac.UpdateOne(s => s.Id == id, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
-        [HttpPost]
-        public void DeleteMenu()
+        [HttpPost("{menuid}/{shopid}")]
+        public RequestResponse DeleteMenu(string menuid, string shopid)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == shopid);
+                shop.Menues = shop.Menues.Where(m => m.Id != menuid).ToList();
+                ShopDac.UpdateOne(s => s.Id == shopid, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
+        }
+
+        [HttpPost("{shopid}/{defaultmenuid}")]
+        public RequestResponse SetDefaultMenu(string shopid, string defaultmenuid)
+        {
+            var response = new RequestResponse();
+            try
+            {
+                var shop = ShopDac.Get(s => s.Id == shopid);
+                shop.DefaultMenuId = defaultmenuid;
+                ShopDac.UpdateOne(s => s.Id == shopid, shop);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
     }
 }

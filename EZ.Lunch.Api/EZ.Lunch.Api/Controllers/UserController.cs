@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EZ.Lunch.Api.Models;
 using EZ.Lunch.Api.Repositories;
 using EZ.Lunch.Api.Repositories.Models;
 using Microsoft.AspNetCore.Http;
@@ -27,30 +28,70 @@ namespace EZ.Lunch.Api.Controllers
             this.UserDac = UserDac;
         }
 
-
-
         [HttpGet]
-        public void List()
+        public IEnumerable<User> List()
         {
-            throw new NotImplementedException();
+            return UserDac.List(u => true);
         }
 
         [HttpPost]
-        public void Add()
+        public RequestResponse Create([FromBody]User request)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                request.Id = Guid.NewGuid().ToString();
+                UserDac.Create(request);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost]
-        public void Edit()
+        public RequestResponse Edit([FromBody]User request)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                var user = UserDac.Get(u => u.Id == request.Id);
+                user.DisplayName = request.DisplayName;
+                UserDac.UpdateOne(u => u.Id == request.Id, user);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
 
         [HttpPost]
-        public void Delete()
+        public RequestResponse Delete(string id)
         {
-            throw new NotImplementedException();
+            var response = new RequestResponse();
+            try
+            {
+                UserDac.DeleteOne(u => u.Id == id);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
     }
 }

@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { OrderCreatePage } from '../pages/order-create/order-create';
 import { OrderHistoryPage } from '../pages/order-history/order-history';
+import { ShopManagePage } from '../pages/shop-manage/shop-manage';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,7 @@ export class MyApp {
       { title: 'สร้างรายการ', component: OrderCreatePage },
       { title: 'ประวัติ', component: OrderHistoryPage },
       { title: 'ปิดโพลปัจจุบัน', component: ListPage },
-      { title: 'จัดการร้าน', component: ListPage },
+      { title: 'จัดการร้าน', component: ShopManagePage },
       { title: 'จัดการคน', component: ListPage },
       { title: 'Logout', component: HomePage }
     ];
