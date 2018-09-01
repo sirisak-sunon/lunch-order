@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ShopManagePage } from '../shop-manage/shop-manage';
+import { HttpClient } from '@angular/common/http';
+import { GlobalVarible, Shop } from '../../app/models';
 
 /**
  * Generated class for the ShopCreatePage page.
@@ -17,14 +19,10 @@ import { ShopManagePage } from '../shop-manage/shop-manage';
 })
 export class ShopCreatePage {
 
-  constructor(public navCtrl: NavController, 
-    public navParams: NavParams,
-    private camera: Camera) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private camera: Camera, private http: HttpClient) {
+    this.Model = new Shop();
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ShopCreatePage');
-  }
+  Model: Shop;
 
   Camera(){
     const options: CameraOptions = {
@@ -45,5 +43,13 @@ export class ShopCreatePage {
 
   goShopMangePage(){
     this.navCtrl.popTo(ShopManagePage)
+  }
+  
+  Create() {
+    this.Model.imageUrl = "https://cdn-asset-mel-1.airsquare.com/www/library/image/blog/shop.png?201609230250";
+    this.http.post(GlobalVarible.host + "/api/Shop/Create", JSON.stringify(this.Model), GlobalVarible.httpOptions)
+      .subscribe(data => {
+        this.navCtrl.popToRoot();
+      });
   }
 }

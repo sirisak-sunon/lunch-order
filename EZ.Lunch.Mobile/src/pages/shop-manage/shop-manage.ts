@@ -2,13 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ShopDetailPage } from '../shop-detail/shop-detail';
 import { ShopCreatePage } from '../shop-create/shop-create';
-
-/**
- * Generated class for the ShopManagePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Shop, GlobalVarible } from '../../app/models';
+import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -17,18 +12,23 @@ import { ShopCreatePage } from '../shop-create/shop-create';
 })
 export class ShopManagePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Model: Shop;
+
+  constructor(public navCtrl: NavController, private http: HttpClient, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ShopManagePage');
+  ionViewDidEnter() {
+    this.http.get<Shop>(GlobalVarible.host + "/api/Shop/List")
+      .subscribe(data => {
+        this.Model = data;
+      });
   }
 
-  goShopDetailPage(){
-    this.navCtrl.push(ShopDetailPage)
+  goShopDetailPage(id: string) {
+    this.navCtrl.push(ShopDetailPage, { id : id })
   }
 
-  goShopCreatePage(){
+  goShopCreatePage() {
     this.navCtrl.push(ShopCreatePage)
   }
 }

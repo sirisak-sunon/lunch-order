@@ -15,6 +15,7 @@ import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { ShopCreatePage } from '../pages/shop-create/shop-create';
 import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
 import { ShopManagePage } from '../pages/shop-manage/shop-manage';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ShopManagePage } from '../pages/shop-manage/shop-manage';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -48,6 +50,7 @@ import { ShopManagePage } from '../pages/shop-manage/shop-manage';
     StatusBar,
     SplashScreen,
     Camera,
+    HttpClient,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

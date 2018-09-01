@@ -11,26 +11,12 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item (click)="goShopDetailPage()">
+    <ion-item (click)="goShopDetailPage(m.id)" *ngFor="let m of Model">
       <ion-avatar item-start>
-        <img src="../../assets/imgs/paotae.jpg">
+        <img src="{{m.imageUrl}}">
       </ion-avatar>
-      <h2>แล้วแต่ เพราแท้</h2>
-      <p>ร้านนี้ขายกระเพรา</p>
-    </ion-item>
-    <ion-item (click)="goShopDetailPage()">
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/burger.jpg">
-      </ion-avatar>
-      <h2>Burger KIng</h2>
-      <p>ราชา แห่งเบอเกอร์</p>
-    </ion-item>
-    <ion-item (click)="goShopDetailPage()">
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/mag.png">
-      </ion-avatar>
-      <h2>McDonald`s</h2>
-      <p>มี 200 ไหมครับ</p>
+      <h2>{{m.name}}</h2>
+      <p>{{m.menues?.length}} เมนู</p>
     </ion-item>
   </ion-list>
 </ion-content>
