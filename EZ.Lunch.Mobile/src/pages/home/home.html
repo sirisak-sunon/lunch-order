@@ -4,19 +4,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <div>
-      <div text-center>
-          <ion-item>
-              <ion-label>Username</ion-label>
-              <ion-select [(ngModel)]="selectedUser">
-
-                <ion-option *ngFor="let user of Users" [value]="user">{{user.displayName}}</ion-option>
-              </ion-select>
-            </ion-item>
-          <br><br>
-          <button block ion-button round color="secondary" (click)="goOrderDetailPage()">Login</button>
-        </div>
-  </div>
-
+<ion-content padding text-center>
+    <ion-grid style="height: 100%">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+          <div style="width: 80%">
+            <img src="../../assets/imgs/LogoEZ.png" width="100"/>
+            <ion-item>
+                <ion-label>Username</ion-label>
+                <ion-select [(ngModel)]="selectedUser">
+  
+                  <ion-option *ngFor="let user of Users" [value]="user">{{user.displayName}}</ion-option>
+                </ion-select>
+              </ion-item>
+            <br><br>
+            <button block ion-button color="secondary" (click)="goOrderDetailPage()">Login</button>
+          </div>
+        </ion-row>
+      </ion-grid>
 </ion-content>
