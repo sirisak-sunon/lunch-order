@@ -15,6 +15,7 @@ import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { ShopCreatePage } from '../pages/shop-create/shop-create';
 import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
 import { ShopManagePage } from '../pages/shop-manage/shop-manage';
+import { UsermanagePage } from '../pages/usermanage/usermanage';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     OrderHistoryPage,
     ShopCreatePage,
     ShopDetailPage,
-    ShopManagePage
+    ShopManagePage,
+    UsermanagePage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     OrderHistoryPage,
     ShopCreatePage,
     ShopDetailPage,
-    ShopManagePage
+    ShopManagePage,
+    UsermanagePage
   ],
   providers: [
     StatusBar,

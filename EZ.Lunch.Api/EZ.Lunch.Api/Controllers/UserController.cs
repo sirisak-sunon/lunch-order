@@ -75,7 +75,7 @@ namespace EZ.Lunch.Api.Controllers
             return response;
         }
 
-        [HttpPost]
+        [HttpPost("{id}")]
         public RequestResponse Delete(string id)
         {
             var response = new RequestResponse();
