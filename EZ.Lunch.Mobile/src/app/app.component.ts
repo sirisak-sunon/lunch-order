@@ -26,6 +26,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
+      { title: 'หน้าแรก', component: OderDetailPage },
       { title: 'สร้างรายการ', component: OrderCreatePage },
       { title: 'ประวัติ', component: OrderHistoryPage },
       { title: 'ปิดโพลปัจจุบัน', component: OderDetailPage },
