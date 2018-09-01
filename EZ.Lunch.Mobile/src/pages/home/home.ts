@@ -30,8 +30,8 @@ export class HomePage {
   }
 
   goOrderDetailPage(){
-    GlobalVarible.username = this.selectedUser.username;
-    this.selectedUser = null;
+    GlobalVarible.User = this.selectedUser;
+    console.log(GlobalVarible.User);
     this.navCtrl.push(OderDetailPage)
   }
 }

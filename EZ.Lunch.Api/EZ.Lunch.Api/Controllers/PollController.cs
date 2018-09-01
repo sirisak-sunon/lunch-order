@@ -44,10 +44,16 @@ namespace EZ.Lunch.Api.Controllers
             if (poll == null) return null;
 
             var pollWithMenu = JsonConvert.DeserializeObject<PollWithMenu>(JsonConvert.SerializeObject(poll));
+            var shop = ShopDac.Get(x => x.Id == poll.SelectedShopId);
+            pollWithMenu.SelectedShopName = shop.Name;
+            pollWithMenu.Menues = shop.Menues;
 
-            foreach (var menu in pollWithMenu.Menues)
+            if (pollWithMenu.Menues != null && pollWithMenu.Menues.Any())
             {
-                menu.VoterCount = pollWithMenu.Orders?.Count(x => x.MenuId == menu.Id) ?? 0;
+                foreach (var menu in pollWithMenu.Menues)
+                {
+                    menu.VoterCount = pollWithMenu.Orders?.Count(x => x.MenuId == menu.Id) ?? 0;
+                }
             }
 
             return pollWithMenu;
@@ -94,22 +100,43 @@ namespace EZ.Lunch.Api.Controllers
         }
 
         [HttpPost("{username}/{pollid}/{menuid}")]
-        public void Vote(string username, string pollid, string menuid)
+        public RequestResponse Vote(string username, string pollid, string menuid)
         {
-            var poll = PollDac.Get(x => x.Id == pollid);
-            var shop = ShopDac.Get(x => x.Id == poll.SelectedShopId);
-            var user = UserDac.Get(x => x.Username == username);
-
-            var orders = poll.Orders.ToList();
-            orders.Add(new Order
+            var response = new RequestResponse();
+            try
             {
-                Id = Guid.NewGuid().ToString(),
-                MenuId = menuid,
-                UserId = user.Id,
-            });
-            poll.Orders = orders;
+                var poll = PollDac.Get(x => x.Id == pollid);
+                var shop = ShopDac.Get(x => x.Id == poll.SelectedShopId);
+                var user = UserDac.Get(x => x.Username == username);
 
-            PollDac.UpdateOne(x => x.Id == pollid, poll);
+                var orders = poll.Orders?.ToList() ?? new List<Order>();
+
+                if (poll.Orders.Any(x => x.UserId == user.Id))
+                {
+                    poll.Orders.FirstOrDefault(x => x.UserId == user.Id).MenuId = menuid;
+                }
+                else
+                {
+                    orders.Add(new Order
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        MenuId = menuid,
+                        UserId = user.Id,
+                    });
+                }
+                poll.Orders = orders;
+
+                PollDac.UpdateOne(x => x.Id == pollid, poll);
+
+                response.Code = 200;
+                response.Message = "success.";
+            }
+            catch (Exception ex)
+            {
+                response.Code = 500;
+                response.Message = "error: " + ex.Message;
+            }
+            return response;
         }
     }
 }

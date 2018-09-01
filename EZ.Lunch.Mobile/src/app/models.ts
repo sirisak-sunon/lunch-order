@@ -1,26 +1,25 @@
 import { DateTime } from "ionic-angular/umd";
 import { HttpHeaders } from "@angular/common/http";
 
-export class Poll
-{
+export class Poll {
     id: string;
     title: string;
     createDate: DateTime;
     createBy: string;
+    closePollDate: DateTime;
     selectedShopId: string;
+    selectedShopName: string;
     orders: Order[];
 }
 
-export class Order
-{
+export class Order {
     id: string;
     userId: string;
     menuId: string;
-    count : string;
+    count: string;
 }
 
-export class Shop
-{
+export class Shop {
     id: string;
     name: string;
     imageUrl: string;
@@ -30,8 +29,7 @@ export class Shop
     menues: Menu[];
 }
 
-export class Menu
-{
+export class Menu {
     id: string;
     name: string;
     createDate: DateTime;
@@ -39,25 +37,21 @@ export class Menu
     voterCount: number;
 }
 
-export class User
-{
+export class User {
     id: string;
     username: string;
     displayName: string;
 }
 
-export class PollWithMenu extends Poll
-{
+export class PollWithMenu extends Poll {
     menues: Menu[];
 }
 
-export class UserWithMenu extends User
-{
+export class UserWithMenu extends User {
     menuName: string;
 }
 
-export class RequestResponse
-{
+export class RequestResponse {
     code: number;
     message: number;
 }
@@ -69,5 +63,5 @@ export class GlobalVarible {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
-    static username = "";
+    static User: User;
 }

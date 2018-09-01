@@ -4,23 +4,22 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <h3 text-center>สั่งข้าววันที่ 02/09/61</h3>
+      <h3 text-center *ngIf="Model">{{Model.title}}</h3>
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <div>
-
-    <ion-row>
-      <ion-col col-9>
-        <h4>ร้านกระเพราแท้</h4>
-      </ion-col>
-      <ion-col col-3>
-        <h6>20/25</h6>
-      </ion-col>
-    </ion-row>
-  </div>
+<ion-content padding *ngIf="Model">
+  <br />
+  <br />
+  <br />
+  <ion-row>
+    <ion-col col-9>
+      <h4>{{Model.selectedShopName}}</h4>
+    </ion-col>
+    <ion-col col-3>
+      <h6>{{Model.orders?.length}}/{{Model.menues?.length}}</h6>
+    </ion-col>
+  </ion-row>
   <ion-row>
     <ion-col col-10>
       <ion-input type="text" placeholder="Filter"></ion-input>
@@ -35,36 +34,22 @@
   </ion-row>
 
   <ion-list radio-group>
-    <ion-row>
+    <ion-row *ngFor="let m of Model.menues">
       <ion-col col-10>
-        <ion-item>
-          <ion-radio checked="false" value="หมู เผ็ด ข้น" item-start></ion-radio>
-          <ion-label>หมู เผ็ด ข้น</ion-label>
+        <ion-item color="{{GetColor(m.id)}}">
+          <ion-radio checked="false" value="{{m.id}}" item-start (click)="ChangeChoice(m.id)"></ion-radio>
+          <ion-label>{{m.name}}</ion-label>
         </ion-item>
       </ion-col>
       <ion-col col-2>
         <div style="margin-top: 15px">
-          <label>2</label>
-        </div>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col col-10>
-        <ion-item>
-          <ion-radio checked="false" value="หมู ฮอท ข้น" item-start></ion-radio>
-          <ion-label>หมู ฮอท ข้น</ion-label>
-        </ion-item>
-      </ion-col>
-      <ion-col col-2>
-        <div style="margin-top: 15px">
-          <label>2</label>
+          <label>{{GetOrderCount(m.id)}}</label>
         </div>
       </ion-col>
     </ion-row>
 
   </ion-list>
 </ion-content>
-<ion-footer>
-  <button color="secondary" ion-button block>สั่ง</button>
+<ion-footer *ngIf="Model">
+  <button color="secondary" ion-button block (click)="Vote()" [disabled]="Model.closePollDate">สั่ง</button>
 </ion-footer>

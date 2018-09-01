@@ -12,6 +12,9 @@ namespace EZ.Lunch.Api.Repositories.Models
         public DateTime CreateDate { get; set; }
         public string CreateBy { get; set; }
         public string SelectedShopId { get; set; }
+        public DateTime? ClosePollDate { get; set; }
+
+        public string SelectedShopName { get; set; }
         public IEnumerable<Order> Orders { get; set; }
     }
 
