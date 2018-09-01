@@ -27,5 +27,30 @@ namespace EZ.Lunch.Api.Controllers
             this.UserDac = UserDac;
         }
 
+
+
+        [HttpGet]
+        public void List()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public void Add()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public void Edit()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

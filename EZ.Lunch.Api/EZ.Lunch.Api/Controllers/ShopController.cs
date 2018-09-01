@@ -61,5 +61,28 @@ namespace EZ.Lunch.Api.Controllers
             throw new NotImplementedException();
         }
 
+        [HttpGet]
+        public void SetDefaultManu()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public void AddMenu()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public void EditMenu()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public void DeleteMenu()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -28,17 +28,37 @@ namespace EZ.Lunch.Api.Controllers
         }
 
         [HttpGet]
-        public void ShowPoll()
+        public void Show ()
         {
             throw new NotImplementedException();
         }
+
         [HttpPost]
-        public void CreatePoll()
+        public void Create()
         {
             throw new NotImplementedException();
         }
+
         [HttpGet]
-        public void ShowVoteDetail()
+        public void ShowVoter()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet]
+        public void ListShop()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet]
+        public void ListMenu()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public void Vote()
         {
             throw new NotImplementedException();
         }
