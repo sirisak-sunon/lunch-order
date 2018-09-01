@@ -27,10 +27,6 @@ namespace EZ.Lunch.Api.Controllers
             this.UserDac = UserDac;
         }
 
-        public ShopController()
-        {
-        }
-
         [HttpGet]
         public void List()
         {
